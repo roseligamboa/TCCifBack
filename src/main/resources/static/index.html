@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Roda no localhost:8080 -->
+<html>
+    <head>
+        <title>Cadastro de Usuários</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/UsuarioController.js"></script> 
+        <script>
+            let usuarioController = new UsuarioController();
+            usuarioController.listar();
+        </script>
+    </head>
+    <body>
+        <br><br>
+        <label>Pesquisar:</label>
+        <input type="text" oninput="usuarioController.pesquisar()" id="pesquisar" />
+      
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela"></tbody>
+        </table>
+        <br><br>
+        <label>Id:</label><input type="text" id="id" readonly="readonly"/>
+        <br><br>
+        <label>Nome:</label><input type="text" id="nome" />
+        <br><br>
+        <button type="button" id="confirmar" onclick="usuarioController.confirmar()">Confirmar</button>
+        <button type="button" id="limpar" onclick="usuarioController.limpar()">Limpar</button>
+    </body>
+</html>
